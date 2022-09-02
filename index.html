@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script type="text/javascript" src="./jq.js"></script>
+<script type="text/javascript" src="./toastr.js"></script>
+        <link href="toastr.css" rel="stylesheet" type="text/css" />
+        <style>
+            h3 {
+                text-align: center;
+            }
+
+            .item {
+                padding-top: 30px;
+                background-color: aqua;
+            }
+
+            .box {
+                transform: translateY(-30%);
+            }
+        </style>
+    </head>
+    <body style="width: 1000px;height: 800px;">
+        <button onclick="test('123','123456')">5566</button>
+    </body>
+</html>
+
+    <script>
+    
+        // window.focus(); //force focus on the currenct window;
+        // document.querySelector('#focusUse').focus();  //for WL Iframe
+        // window.addEventListener('blur', function(e){
+        //     if(document.activeElement == document.querySelector('#sboLiveStreamIframe iframe'))
+        //     {
+        //         var url="<%=SboLiveStreamLoginUrl%>";
+        //         window.open(url,"sboLive","width=375,height=667");
+        //     }
+        // });
+
+        function hidesabaSportsTransferAndLoginPopup() {
+            document.getElementById("sabaSportsTransferAndLoginPopup").style.display = 'none';
+        }
+
+        function LoginSabaSports() {
+            console.log("Hit Naga API to get login URL > Naga will help to login & return login url > open new window for Saba game")
+
+            //1. Call Naga Login API to get login URL
+            //2. Naga will help player to login & return login url
+            //3. Open new window for Saba game
+
+            var newWindow = window.open('', '_blank', 'scrollbars=yes, resizable=0,top=-1500,left=0,width=' + screen.width * 0.7 + ',height=' + screen.height * 0.7);
+            var URLToLaunchGame =
+                `http://sbtest.sbsports.17mybet.com/Deposit_ProcessLogin.aspx?token=xxxxxxx&lang=xx&market=[market column]&act=[act column]&menutype=[menu column]`;
+
+            //$.ajax({
+            //    type: "Post",
+            //    url: "/api/Saba/login?gameId=" + gameId + "&platformId=" + platformId,
+            //    success: function (data) {
+            //        newWindow.location.href = data + "&isMobile=" + isMobile;
+            //        $('.gameReal.needLoginToPlay.divOpening').css('opacity', '0');
+            //    }
+            //});
+        }
+
+        function TransferFundsIntoSaba() {
+            //1. Call Naga API
+            //2. Check error code: if error code !=
+
+            //$.post('', { key1: 'value1', key2: 'value2' }, function() {
+            //    // do call back
+            //});
+        }
+
+        function toggleMoreMarketTab(eventResultId, isMainMarket) {
+            var mainBlockElementId = "more-block-" + eventResultId;
+            var fastMarketBlockElementId = "fast-market-block-" + eventResultId;
+            if (isMainMarket) {
+                $('[id^=' + mainBlockElementId + ']').show();
+                $('[id^=' + fastMarketBlockElementId + ']').hide();
+
+                $('#more-main').addClass("more-market-active");
+                $('#more-fast-markets').removeClass("more-market-active");
+                $M('more').isFastMarket(false,eventResultId);
+            } else {
+                $('[id^=' + mainBlockElementId + ']').hide();
+                $('[id^=' + fastMarketBlockElementId + ']').show();
+
+                $('#more-main').removeClass("more-market-active");
+                $('#more-fast-markets').addClass("more-market-active");
+                $M('more').isFastMarket(true, eventResultId);
+            }
+        }
+
+        function toggleMoreMarket() {
+            var mainBlockElementId = "more-block-" + eventResultId;
+            var fastMarketBlockElementId = "fast-market-block-" + eventResultId;
+            $('[id^=' + mainBlockElementId + ']').hide();
+            $('[id^=' + fastMarketBlockElementId + ']').show();
+
+            $('#more-main').removeClass("more-market-active");
+            $('#more-fast-markets').addClass("more-market-active");
+            $M('more').isFastMarket(true, eventResultId);
+        }
+
+
+
+        function CloseVideo() {
+            $('#liveMatchVideo').hide();
+            document.getElementById('videoLiveMatchVideo').src = '';
+        }
+
+        function OpenFbsIframe() {
+            document.getElementById('fbsIframe').style.display = "block";
+            document.getElementById('fbsIcon').style.display = "none";
+        }
+
+        function CloseFbsIframe() {
+            document.getElementById('fbsIframe').style.display = "none";
+            document.getElementById('fbsIcon').style.display = "block";
+        }
+
+        window.onload = function () {
+            var sportsMarket = document.getElementById('body-inner');
+            
+            var iframe = document.getElementById('fbsIframe');
+            if (iframe) {
+                
+            }
+        };
+
+    </script>
+<script>
+const gamesRecommendation = [
+        {time: "09/02/2022 22:01 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 22:02 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 22:03 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 22:04 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 22:05 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 21:01 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 21:02 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 21:03 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 21:04 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+        {time: "09/02/2022 21:05 GMT+8", mName: "RCD Espanyol -vs- Real Madrid", mId: 4455477, mrId: 21932497},
+    ];
+
+    for (const game of gamesRecommendation) {
+        localStorage.removeItem("ToastrGameRecommendation" + game.mId);
+    }
+
+
+    var refreshIntervalId = setInterval(() => {
+        $(function () {
+                var i = -1;
+                var $toastlast;
+
+                // console.log("start interval")
+
+                $('#showtoast').click(
+                );
+
+                var test = function (title, msg) {
+
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": true,
+                        "progressBar": false,
+                        "positionClass": "toast-top-center",
+                        "preventDuplicates": true,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": 60000,
+                        "extendedTimeOut": 0,
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "show",
+                        "hideMethod": "hide",
+                        "tapToDismiss": false
+                    }
+
+                    toastr.options.onShown = function () {
+                        // console.log('hello');
+                    }
+                    toastr.options.onHidden = function () {
+                        // console.log('goodbye');
+                        var someVarName = "clicked";
+                        localStorage.setItem("ToastrGameRecommendation" + game.mId, someVarName);
+                    }
+                    toastr.options.onclick = function () {
+                        // console.log('clicked');
+                        recommendMatchAction(game.mId, game.mrId);
+                        recordActionLog(game.mrId);
+                        var someVarName = "clicked";
+                        localStorage.setItem("ToastrGameRecommendation" + game.mId, someVarName);
+                    }
+                    toastr.options.onCloseClick = function () {
+                        // console.log('close button clicked');
+                    }
+                    toastr.options.closeOnHover = false;
+
+                    var $toast = toastr["info"](msg, title); // Wire up an event handler to a button in the toast, if it exists
+                    $toastlast = $toast;
+
+                    if (typeof $toast === 'undefined') {
+                        return;
+                    }
+
+                    if ($toast.find('.clear').length) {
+                        $toast.delegate('.clear', 'click', function () {
+                            toastr.clear($toast, {force: true});
+                        });
+                    }
+                }
+
+                function getLastToast() {
+                    return $toastlast;
+                }
+
+                $('#clearlasttoast').click(function () {
+                    toastr.clear(getLastToast());
+                });
+                $('#cleartoasts').click(function () {
+                    toastr.clear();
+                });
+
+                var game = gamesRecommendation.find(element => {
+                    let diff = new Date(new Date().getTime()) - new Date(Date.parse(element.time));
+                    return diff > -60000 && diff < 5400000;
+                });
+                console.log('game', game)
+
+                    var ToastrGameRecommendationClicked = localStorage.getItem("ToastrGameRecommendation" + game.mId);
+                    if (ToastrGameRecommendationClicked != 'clicked') {
+                        let title = 'Game about to start in 10 minutes!';
+                        let msg = 'Match: ' + game.mName + '<br />Click to bet now!'
+
+                        if (!toastr.shouldExit(msg)) {
+                            test(title, msg);
+                            let backgroundImage = 'url("./123.png")';
+                            let style = document.getElementById('toast-background').style;
+                            style.backgroundImage = backgroundImage;
+                            style.backgroundSize = 'contain';
+                        }
+                    }
+                
+            }
+        )
+    }, 3000);
+                var test = function (title, msg) {
+
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": true,
+                        "progressBar": false,
+                        "positionClass": "toast-top-center",
+                        "preventDuplicates": true,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": 60000,
+                        "extendedTimeOut": 0,
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "show",
+                        "hideMethod": "hide",
+                        "tapToDismiss": false
+                    }
+
+                    toastr.options.onShown = function () {
+                        // console.log('hello');
+                    }
+                    toastr.options.onHidden = function () {
+                        // console.log('goodbye');
+                        var someVarName = "clicked";
+                        localStorage.setItem("ToastrGameRecommendation" + game.mId, someVarName);
+                    }
+                    toastr.options.onclick = function () {
+                        // console.log('clicked');
+                        recommendMatchAction(game.mId, game.mrId);
+                        recordActionLog(game.mrId);
+                        var someVarName = "clicked";
+                        localStorage.setItem("ToastrGameRecommendation" + game.mId, someVarName);
+                    }
+                    toastr.options.onCloseClick = function () {
+                        // console.log('close button clicked');
+                    }
+                    toastr.options.closeOnHover = false;
+
+                    var $toast = toastr["info"](msg, title); // Wire up an event handler to a button in the toast, if it exists
+                    $toastlast = $toast;
+
+                    if (typeof $toast === 'undefined') {
+                        return;
+                    }
+
+                    if ($toast.find('.clear').length) {
+                        $toast.delegate('.clear', 'click', function () {
+                            toastr.clear($toast, {force: true});
+                        });
+                    }
+                }
+        function recordActionLog(mrId) {
+        var data = {
+            actionName: "Redirect player by recommended game notification",
+            actionData: mrId
+        };
+
+        $.ajax({
+            url: "/web-root/restricted/api/actionLog/addRecordToPlayerActionLog.aspx",
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            traditional: true,
+            data: JSON.stringify(data)
+        });
+    }
+</script>
